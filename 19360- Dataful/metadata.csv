@@ -1,0 +1,10 @@
+organisation,Ministry of Statistics and Programme Implementation
+sectors,"Environment and Forest"
+updated_frequency,As and when
+granularity,"Bieannial, State"
+time_saved,6 hours
+source,"MoSPI: EnviStats India 2022 Vol:II Environment Accounts"
+source_link,"https://www.mospi.gov.in/sites/default/files/reports_and_publication/statistical_publication/EnviStats/EnviStatsVol2_2022revised.pdf"
+time_period,"1987, 1989, 1991, 1993, 1995, 1997, 1999, 2001, 2003, 2005, 2009, 2011, 2013, 2015, 2017, 2019, 2021, 2023"
+units,"value in square kilometers"
+citation,"Ministry of Statistics and Programme Implementation. Mangroves: Year- and State-wise Mangrove Forest Cover in India, since 1987 [Data set]. Dataful. https://dataful.in/datasets/19360/19360"
