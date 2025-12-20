@@ -1,6 +1,6 @@
 # 🌲 India Forestry Data Dashboard (1987-2023)
 
-![Dashboard Banner](assets/banner.png)
+
 
 ## 📌 Executive Summary
 **"Unlocking 30 Years of Green Data."**
