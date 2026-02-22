@@ -248,15 +248,15 @@ elif page == "Deep Dive Data":
 
         # Custom HTML Table Styles for Dark Mode
         def render_custom_table(df, title, color_theme):
-            # Use min-height to ensure symmetry while allowing growth for long names
-            html = f'<div style="background-color: #262730; padding: 15px; border-radius: 10px; border: 1px solid #4f4f4f; min-height: 520px; display: flex; flex-direction: column;">'
-            html += f'<h4 style="color: {color_theme}; text-align: center; margin-bottom: 12px; font-size: 1.1rem;">{title}</h4>'
-            html += '<div style="flex-grow: 1; overflow-x: auto;">' # Prevents horizontal overflow
-            html += '<table style="width: 100%; border-collapse: collapse; color: #e0e0e0; table-layout: fixed; font-size: 14px;">'
+            # Reduced min-height to eliminate extra space while keeping symmetry
+            html = f'<div style="background-color: #262730; padding: 15px; border-radius: 10px; border: 1px solid #4f4f4f; min-height: 440px; display: flex; flex-direction: column;">'
+            html += f'<h4 style="color: {color_theme}; text-align: center; margin-bottom: 8px; font-size: 1.1rem;">{title}</h4>'
+            html += '<div style="flex-grow: 1; overflow-x: auto;">' 
+            html += '<table style="width: 100%; border-collapse: collapse; color: #e0e0e0; table-layout: fixed; font-size: 14px; margin-bottom: 0;">'
             html += '<thead>'
             html += '<tr style="border-bottom: 2px solid #4f4f4f;">'
-            html += '<th style="padding: 10px 5px; text-align: left; width: 62%;">State</th>'
-            html += '<th style="padding: 10px 5px; text-align: right; width: 38%;">Change<br>(sq km)</th>'
+            html += '<th style="padding: 8px 5px; text-align: left; width: 62%;">State</th>'
+            html += '<th style="padding: 8px 5px; text-align: right; width: 38%;">Change<br>(sq km)</th>'
             html += '</tr></thead><tbody>'
             
             for _, row in df.iterrows():
@@ -265,8 +265,8 @@ elif page == "Deep Dive Data":
                 color = "#66bb6a" if val > 0 else "#ef5350"
                 
                 html += f'<tr style="border-bottom: 1px solid #383838;">'
-                html += f'<td style="padding: 12px 5px; vertical-align: middle; line-height: 1.2; word-wrap: break-word;">{row["State"]}</td>'
-                html += f'<td style="padding: 12px 5px; text-align: right; color: {color}; font-weight: bold; vertical-align: middle;">{val_fmt}</td>'
+                html += f'<td style="padding: 10px 5px; vertical-align: middle; line-height: 1.2; word-wrap: break-word;">{row["State"]}</td>'
+                html += f'<td style="padding: 10px 5px; text-align: right; color: {color}; font-weight: bold; vertical-align: middle;">{val_fmt}</td>'
                 html += '</tr>'
             
             html += '</tbody></table></div></div>'
