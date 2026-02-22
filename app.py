@@ -248,14 +248,14 @@ elif page == "Deep Dive Data":
 
         # Custom HTML Table Styles for Dark Mode
         def render_custom_table(df, title, color_theme):
-            # Header with Zero Indentation
-            html = f'<div style="background-color: #262730; padding: 10px; border-radius: 10px; border: 1px solid #4f4f4f; margin-bottom: 20px;">'
-            html += f'<h4 style="color: {color_theme}; text-align: center;">{title}</h4>'
-            html += '<table style="width: 100%; border-collapse: collapse; color: white;">'
+            # Container with Fixed Height to ensure symmetry
+            html = f'<div style="background-color: #262730; padding: 15px; border-radius: 10px; border: 1px solid #4f4f4f; height: 480px; display: flex; flex-direction: column;">'
+            html += f'<h4 style="color: {color_theme}; text-align: center; margin-bottom: 15px;">{title}</h4>'
+            html += '<table style="width: 100%; border-collapse: collapse; color: white; table-layout: fixed;">'
             html += '<thead>'
             html += '<tr style="border-bottom: 2px solid #4f4f4f;">'
-            html += '<th style="padding: 10px; text-align: left;">State</th>'
-            html += '<th style="padding: 10px; text-align: right;">Change (sq km)</th>'
+            html += '<th style="padding: 10px; text-align: left; width: 65%;">State</th>'
+            html += '<th style="padding: 10px; text-align: right; width: 35%;">Change (sq km)</th>'
             html += '</tr></thead><tbody>'
             
             for _, row in df.iterrows():
@@ -263,10 +263,9 @@ elif page == "Deep Dive Data":
                 val_fmt = f"{val:+.2f}"
                 color = "#66bb6a" if val > 0 else "#ef5350"
                 
-                # Row with Zero Indentation
                 html += f'<tr style="border-bottom: 1px solid #383838;">'
-                html += f'<td style="padding: 8px;">{row["State"]}</td>'
-                html += f'<td style="padding: 8px; text-align: right; color: {color}; font-weight: bold;">{val_fmt}</td>'
+                html += f'<td style="padding: 12px 10px; vertical-align: middle; line-height: 1.2;">{row["State"]}</td>'
+                html += f'<td style="padding: 12px 10px; text-align: right; color: {color}; font-weight: bold; vertical-align: middle;">{val_fmt}</td>'
                 html += '</tr>'
             
             html += '</tbody></table></div>'
